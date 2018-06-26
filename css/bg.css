@@ -17,6 +17,7 @@ body {
   margin: 15% auto 0;
   position: absolute;
   width: 100%;
+  z-index: auto;
 }
 
 svg {

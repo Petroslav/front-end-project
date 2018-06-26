@@ -1,12 +1,14 @@
 .search {
-    margin: 25%;
-    margin-bottom: 0%;
+    margin:25%;
     padding: 5px 10px;
     display: flex;
     background: rgba(0, 0, 0, 0.4);
     border-radius: 10px;
     flex-direction: right;
     justify-content: center;
+    position: absolute;
+    top: 0px;
+    width: 50%;
 
 }
 
