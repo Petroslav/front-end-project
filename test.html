@@ -16,25 +16,29 @@
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 <body>
+    <div class="search">
+        <input type="text" class="searchBox" id="inputLocation" placeholder="City, Country">
+        <button id="submitButton" class="searchButton">DAVAI </button>
+    </div>
 <div>
-    <h1>WAT</h1>
+    <h1 class='wat'>WAT</h1>
 </div>
-
-
 <p>First Paragraph</p>
 <p>Second Paragraph</p>
 <p>Yet one more Paragraph</p>
 
-<script>
-    $( "p" ).click(function() {
-        $( this ).slideUp();
-    });
-
-    $( "h1" ).on('click', function() {
-        var $this = $(this);
-        $this.html('SWAG');
-    });
-</script>
- 
 </body>
+<script>
+var submitLocation = function() {
+    var x = $("#inputLocation").val();
+    console.log(x);
+  }
+  
+  $(document).ready(function() {
+    $("#submitButton").on('click', function() {
+        submitLocation()
+    });
+  });
+  </script>
+<!-- <script src="js/search.js"></script>  -->
 </html>
