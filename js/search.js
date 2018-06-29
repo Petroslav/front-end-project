@@ -26,7 +26,7 @@ function display(data) {
 
     var temp = data.main.temp;
     var pressure = data.main.pressure;
-    var humidity = data.main.humitidty;
+    var humidity = data.main.humidity;
     var tempMin = data.main.temp_min;
     var tempMax = data.main.temp_max;
 

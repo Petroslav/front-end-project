@@ -6,6 +6,7 @@
 
 body {
     background: rgb(87, 178, 252);
+    background: #85b9dd;
 }
 
 #tabs {
@@ -14,11 +15,15 @@ body {
     align-self: center;
     position: relative;
     top: 25%;
-    left: 25%;
+    left: 27.5%;
     border: 3px solid white;
-    border-radius: 3px;
-    background: rgba(255, 255, 255, 0.85);;
-    width: 50%;
+    border-radius: 3px;    
+    background: #007fff;   
+    background: rgba(29, 70, 110, 0.25);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    -webkit-text-stroke: 1px black;
+    width: 45%;
     height: 400px;
 }
 
@@ -50,7 +55,8 @@ body {
     display: flex;
     align-self: flex-end;
     height: 75%;
-    width: 25%;
+    width: 16.6%;
+    overflow: hidden;
     margin-left: 2px;
     margin-right: 2px;
     padding-bottom: 5px;

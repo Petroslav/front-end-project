@@ -4,7 +4,8 @@
 <head>
   <meta charset="utf-8">
   <title>click demo</title>
-  <link rel="stylesheet" type="text/css" media="screen" href="css/weather-icons.min.css" />
+  <link rel="stylesheet" href="css/weather-icons.min.css" />
+  <link rel="stylesheet" href="css/weather-icons.wind.min.css" />
   <link rel="stylesheet" href="./css/tabs.css" />
   <link rel="stylesheet" href="./css/currentWeatherTab.css" />
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -21,45 +22,138 @@
   <div id="tabs">
     <ul class='tabs-list'>
       <li>
-        <a href="#fragment-1">Today's weather</a>
+        <a href="#fragment-1">Current</a>
       </li>
       <li>
-        <a href="#fragment-2">5-day forecast</a>
+        <a href="#fragment-2">Today</a>
+      </li>
+      <li>
+        <a href="#fragment-3">Date + 1</a>
+      </li>
+      <li>
+        <a href="#fragment-4">Date + 2</a>
+      </li>
+      <li>
+        <a href="#fragment-5">Date + 3</a>
+      </li>
+      <li>
+        <a href="#fragment-6">Date + 4</a>
       </li>
     </ul>
     <div id="fragment-1" class='weather-today'>
       <div class='header-info'>
         <div class='detailed-info'>
-          <div class = 'location' >City, country - mainWeather</div>
-          <hr class = 'line' />
-          <div>weather conditions description</div>
-          <div>wind speed and direction</div>
-          <div>humidity</div>
+          <div class='location'>
+            <span id='city-country'>
+              London, GB
+            </span>
+            <span id='date'>
+              29.06.2018
+            </span>
+          </div>
+          <hr class='line' />
+          <div class='info'>
+            <span class='short-descr'> Clear </span>
+            <div class='info-box'>
+              <div class='sky'>
+                <span class='long-descr'>clear sky</span>
+                <span class='cloudiness'>Cloudiness: 0%</span>
+                <span class='pressure'>Pressure: 1019 hPa</span>
+              </div>
+              <div class='wind'>
+                <span class='wind-speed'>7.2 m/s</span>
+                <i class="wi wi-direction-down-right wind-dir-icon"><span class='wind-dir'>100°</span></i>
+                
+                <span class='wind-dir'></span>
+              </div>
+            </div>
+          </div>
         </div>
+        <div class='divider'></div>
         <div class='main-weather-info'>
           <div class='icon-1'>
             <!-- Icon for the weather goes in the tag below -->
-            <i class="wi wi-night-sleet icon-1"></i>
+            <i class="wi wi-day-sunny icon-1"></i>
           </div>
-            25 °C
-          <div class = 'header-temps'>
-              <div class = 'temp-info'>14 °C</div>
-              <div class = 'temp-info'>28 °C</div>
+          25 °C
+          <hr class='line' />
+          <div class='header-temps'>
+            14 °C - 28 °C
           </div>
         </div>
       </div>
       <div class='footer-info'>
-        <div>current time</div>
-        <div>
-          sunrise time
+        <div class='sunrise-sunset'>
+          <span class='sunrise'>Sunrise: 6:43</span>
+          <span class='sunset'> Sunset: 21:23</span>
         </div>
-        <div>
-          sunset time
+        <div class='time'>
+          17:43
         </div>
       </div>
-
     </div>
-    <div id="fragment-2">
+    <div id="fragment-2" class='weather-today'>
+      <div class='header-info'>
+        <div class='detailed-info'>
+          <div class='location'>
+            <span id='city-country'>
+              London, GB
+            </span>
+            <span id='date'>
+              29.06.2018
+            </span>
+          </div>
+          <hr class='line' />
+          <div class='info'>
+            <span class='short-descr'> Clear </span>
+            <div class='info-box'>
+              <div class='sky'>
+                <span class='long-descr'>clear sky</span>
+                <span class='cloudiness'>Cloudiness: 0%</span>
+                <span class='pressure'>Pressure: 1019 hPa</span>
+              </div>
+              <div class='wind'>
+                <span class='wind-speed'>7.2 m/s</span>
+                <i class="wi wi-direction-down-right"></i>
+                <span class='wind-dir'>100°</span>
+                <span class='wind-dir'></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='divider'></div>
+        <div class='main-weather-info'>
+          <div class='icon-1'>
+            <!-- Icon for the weather goes in the tag below -->
+            <i class="wi wi-day-sunny icon-1"></i>
+          </div>
+          25 °C
+          <hr class='line' />
+          <div class='header-temps'>
+            14 °C - 28 °C
+          </div>
+        </div>
+      </div>
+      <div class='footer-info'>
+        <div class='sunrise-sunset'>
+          <span class='sunrise'>Sunrise: 6:43</span>
+          <span class='sunset'> Sunset: 21:23</span>
+        </div>
+        <div class='time'>
+          17:43
+        </div>
+      </div>
+    </div>
+    <div id="fragment-3" class='weather-today'>
+      <p>2 day weather forecast</p>
+    </div>
+    <div id="fragment-4" class='weather-today'>
+      <p>3 day weather forecast</p>
+    </div>
+    <div id="fragment-5" class='weather-today'>
+      <p>4 day weather forecast</p>
+    </div>
+    <div id="fragment-6" class='weather-today'>
       <p>5 day weather forecast</p>
     </div>
   </div>
