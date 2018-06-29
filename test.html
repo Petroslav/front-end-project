@@ -1,44 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>click demo</title>
-  <style>
-  p {
-    color: red;
-    margin: 5px;
-    cursor: pointer;
-  }
-  p:hover {
-    background: yellow;
-  }
-  </style>
+  <link rel="stylesheet" type="text/css" media="screen" href="css/weather-icons.min.css" />
+  <link rel="stylesheet" href="./css/tabs.css" />
+  <link rel="stylesheet" href="./css/currentWeatherTab.css" />
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-</head>
-<body>
-    <div class="search">
-        <input type="text" class="searchBox" id="inputLocation" placeholder="City, Country">
-        <button id="submitButton" class="searchButton">DAVAI </button>
-    </div>
-<div>
-    <h1 class='wat'>WAT</h1>
-</div>
-<p>First Paragraph</p>
-<p>Second Paragraph</p>
-<p>Yet one more Paragraph</p>
-
-</body>
-<script>
-var submitLocation = function() {
-    var x = $("#inputLocation").val();
-    console.log(x);
-  }
-  
-  $(document).ready(function() {
-    $("#submitButton").on('click', function() {
-        submitLocation()
-    });
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src='./js/test.js'></script>
+  <!-- <script>
+  $('html').on('click', function(){
+    $('head').append('<link rel="stylesheet" href="./css/testCSS.css" />');
   });
-  </script>
-<!-- <script src="js/search.js"></script>  -->
+  </script> -->
+</head>
+
+<body>
+  <div id="tabs">
+    <ul class='tabs-list'>
+      <li>
+        <a href="#fragment-1">Today's weather</a>
+      </li>
+      <li>
+        <a href="#fragment-2">5-day forecast</a>
+      </li>
+    </ul>
+    <div id="fragment-1" class='weather-today'>
+      <div class='header-info'>
+        <div class='detailed-info'>
+          <div class = 'location' >City, country - mainWeather</div>
+          <hr class = 'line' />
+          <div>weather conditions description</div>
+          <div>wind speed and direction</div>
+          <div>humidity</div>
+        </div>
+        <div class='main-weather-info'>
+          <div class='icon-1'>
+            <!-- Icon for the weather goes in the tag below -->
+            <i class="wi wi-night-sleet icon-1"></i>
+          </div>
+            25 °C
+          <div class = 'header-temps'>
+              <div class = 'temp-info'>14 °C</div>
+              <div class = 'temp-info'>28 °C</div>
+          </div>
+        </div>
+      </div>
+      <div class='footer-info'>
+        <div>current time</div>
+        <div>
+          sunrise time
+        </div>
+        <div>
+          sunset time
+        </div>
+      </div>
+
+    </div>
+    <div id="fragment-2">
+      <p>5 day weather forecast</p>
+    </div>
+  </div>
+</body>
+
 </html>

@@ -56,6 +56,6 @@ function display(data) {
     console.log(cityName);
 }
 
-var mainStructure = function() {
+var mainStructure = function () {
     $('.search').setCss('display: none');
 };
