@@ -132,3 +132,20 @@ i {
 .wind-dir-icon {
     font-size: 44px;
 }
+
+.list-picker {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    align-content: space-between;
+    margin: 5px;
+    padding: 0;
+
+}
+
+.time-picker {
+    margin-left: 5px;
+    background: rgba(255, 255, 255, 0.35);
+    border-radius: 8px;
+    height: 20%;
+}

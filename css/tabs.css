@@ -51,6 +51,15 @@ body {
     height: 100%;
 }
 
+.list-picker a{
+    text-decoration: none;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    font-size: 19px;
+    margin: 3px;
+    -webkit-text-stroke: 1px black;
+}
+
 .tabs-list li {
     display: flex;
     align-self: flex-end;
