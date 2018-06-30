@@ -4,13 +4,15 @@
 <head>
   <meta charset="utf-8">
   <title>click demo</title>
-  <link rel="stylesheet" href="css/weather-icons.min.css" />
-  <link rel="stylesheet" href="css/weather-icons-wind.min.css" />
-  <link rel="stylesheet" href="./css/tabs.css" />
-  <link rel="stylesheet" href="./css/currentWeatherTab.css" />
+  <link rel="stylesheet" href="css/weather-icons.min.css" type='text/css' />
+  <link rel="stylesheet" href="css/weather-icons-wind.min.css" type='text/css' />
+  <link rel="stylesheet" href="./css/tabs.css" type='text/css' />
+  <link rel="stylesheet" href="./css/currentWeatherTab.css" type='text/css' />
+  <link rel='stylesheet' href='css/indexStyle.css' type='text/css' >
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src='./js/test.js'></script>
+  <script src='./js/search.js'></script>
   <!-- <script>
   $('html').on('click', function(){
     $('head').append('<link rel="stylesheet" href="./css/testCSS.css" />');
@@ -19,6 +21,13 @@
 </head>
 
 <body>
+  <div class='search' id='search-form'>
+    <input class='search-bar' type='text' placeholder='Enter location...' name='location' />
+    <button class='search-btn' id='search-btn'>
+      <img class='search-btn-img' src='images/search.png'>
+    </button>
+  </div>
+
   <div id="tabs">
     <ul class='tabs-list'>
       <li>
@@ -44,39 +53,59 @@
       <div class='header-info'>
         <div class='detailed-info'>
           <div class='location'>
-            <span id='city-country'>
+            <span id='city-country-current'>
               London, GB
             </span>
-            <span id='date'>
+            <span id='date-current'>
               29.06.2018
             </span>
           </div>
           <hr class='line' />
           <div class='info'>
-            <span class='short-descr'> Clear </span>
+            <span class='short-descr' id = 'short-descr-current'> Clear </span>
             <div class='info-box'>
               <div class='sky'>
-                <span class='long-descr'>clear sky</span>
-                <span class='cloudiness'>Cloudiness: 0%</span>
-                <span class='pressure'>Pressure: 1019 hPa</span>
+                <span class='long-descr' id = 'long-descr-current'>clear sky</span>
+                <span class='cloudiness' id = 'cloudiness-current'>Cloudiness: 0%</span>
+                <span class='pressure'>
+                  <i class='wi wi-barometer'></i>
+                  <span id = 'pressure-current'>1019 hPa</span>
+                </span>
               </div>
               <div class='wind'>
                 <span class='wind-speed'>7.2 m/s</span>
-                <i class="wi wi-direction-down-right wind-dir-icon"><span class='wind-dir'>100°</span></i>
+                <span class='wind-dir'>
+                  <i class="wi wi-direction-down-right wind-dir-icon"></i> 100°</span>
                 <span class='wind-dir'></span>
               </div>
             </div>
           </div>
-          <div class = "time-picker">
-            <ul class = 'list-picker'>
-                <li><a href = "">03:00</a></li>
-                <li><a href = "">06:00</a></li>
-                <li><a href = "">09:00</a></li>
-                <li><a href = "">12:00</a></li>
-                <li><a href = "">15:00</a></li>
-                <li><a href = "">18:00</a></li>
-                <li><a href = "">21:00</a></li>
-                <li><a href = "">00:00</a></li>
+          <div class="time-picker">
+            <ul class='list-picker'>
+              <li>
+                <a href="">03:00</a>
+              </li>
+              <li>
+                <a href="">06:00</a>
+              </li>
+              <li>
+                <a href="">09:00</a>
+              </li>
+              <li>
+                <a href="">12:00</a>
+              </li>
+              <li>
+                <a href="">15:00</a>
+              </li>
+              <li>
+                <a href="">18:00</a>
+              </li>
+              <li>
+                <a href="">21:00</a>
+              </li>
+              <li>
+                <a href="">00:00</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -95,8 +124,10 @@
       </div>
       <div class='footer-info'>
         <div class='sunrise-sunset'>
-          <span class='sunrise'>Sunrise: 6:43</span>
-          <span class='sunset'> Sunset: 21:23</span>
+          <span class='sunrise'>
+            <i class='wi wi-sunrise'></i> 6:43</span>
+          <span class='sunset'>
+            <i class='wi wi-sunset'></i> 21:23</span>
         </div>
         <div class='time'>
           17:43
@@ -121,26 +152,43 @@
               <div class='sky'>
                 <span class='long-descr'>clear sky</span>
                 <span class='cloudiness'>Cloudiness: 0%</span>
-                <span class='pressure'>Pressure: 1019 hPa</span>
+                <span class='pressure'>
+                  <i class='wi wi-barometer'></i> 1019 hPa</span>
               </div>
               <div class='wind'>
                 <span class='wind-speed'>7.2 m/s</span>
-                <i class="wi wi-direction-down-right"></i>
-                <span class='wind-dir'>100°</span>
+                <span class='wind-dir'>
+                  <i class="wi wi-direction-down-right"></i>100°</span>
                 <span class='wind-dir'></span>
               </div>
             </div>
           </div>
-          <div class = "time-picker">
-            <ul class = 'list-picker'>
-                <li><a href = "">03:00</a></li>
-                <li><a href = "">06:00</a></li>
-                <li><a href = "">09:00</a></li>
-                <li><a href = "">12:00</a></li>
-                <li><a href = "">15:00</a></li>
-                <li><a href = "">18:00</a></li>
-                <li><a href = "">21:00</a></li>
-                <li><a href = "">00:00</a></li>
+          <div class="time-picker">
+            <ul class='list-picker'>
+              <li>
+                <a href="">03:00</a>
+              </li>
+              <li>
+                <a href="">06:00</a>
+              </li>
+              <li>
+                <a href="">09:00</a>
+              </li>
+              <li>
+                <a href="">12:00</a>
+              </li>
+              <li>
+                <a href="">15:00</a>
+              </li>
+              <li>
+                <a href="">18:00</a>
+              </li>
+              <li>
+                <a href="">21:00</a>
+              </li>
+              <li>
+                <a href="">00:00</a>
+              </li>
             </ul>
           </div>
         </div>

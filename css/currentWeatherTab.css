@@ -144,6 +144,9 @@ i {
 }
 
 .time-picker {
+    display: flex;
+    align-content: center;
+    margin-top: 5%;
     margin-left: 5px;
     background: rgba(255, 255, 255, 0.35);
     border-radius: 8px;
