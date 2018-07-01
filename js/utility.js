@@ -347,6 +347,22 @@ var shortStringDate = function(date) {
 
 }
 
+var compareDates = function(date1, date2){
+    if(date1.getMonth() === 12 && date2.getMonth() === 1){
+        return true;
+    }
+    if(date1.getMonth() == date2.getMonth()){
+        if(date2.getDate() > date1.getDate()){
+            return true;
+        }
+    }else{
+        if(date1.getMonth() < date2.getMonth()){
+            return true;
+        }
+    }
+    return false;
+}
+
 Date.prototype.addDays = function (days) {
     var date = new Date(this.valueOf());
     date.setDate(date.getDate() + days);

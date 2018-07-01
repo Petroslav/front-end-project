@@ -7,7 +7,7 @@ var populateLocation = function (tab, cityName, country) {
     var num = tab[tab.length - 1];
     if (+num > 1) {
 
-        date.addDays(+num - 2);
+        date = date.addDays(+num - 1);
     }
     $tab.html(stringDate(date))
 }

@@ -15,6 +15,10 @@ const FIVE_DAY_WEATHER_PART_3 = '&units=metric&mode=json&APPID='
 var offset;
 var date;
 
+$(function () {
+    $("#tabs").tabs();
+});
+
 $(document).ready(function () {
     $('.search-btn').on('click', function () {
         var city = $('.search-bar').val();
@@ -42,7 +46,7 @@ var populateToday = function (data) {
     var timestamp = Math.floor(new Date().getTime() / 1000);
     var url = TIMEZONE_PART_1 + lat + ',' + lon + TIMEZONE_PART_2 + timestamp + TIMEZONE_PART_3 + GOOGLE_TIMEZONE_API_KEY;
 
-    offset = $.parseJSON($.ajax({
+    offset = JSON.parse($.ajax({
         url: url,
         type: 'GET',
         dataType: 'json',
@@ -85,21 +89,77 @@ var populateToday = function (data) {
         date = date.addDays(i - 1);
         date = shortStringDate(date);
         $(tab).html(date);
+        var tabID = '#fragment-' + i;
+        populateLocation(tabID, cityName, country);
+        populateSunRise(tabID, offset, sunrise, sunset);
+        populateLocalTime(tabID, offset);
     }
-    
+
     var fiveDayURL = FIVE_DAY_WEATHER_PART_1 + lat + FIVE_DAY_WEATHER_PART_2 + lon + FIVE_DAY_WEATHER_PART_3 + WEATHER_API_KEY;
     $.ajax({
         url: fiveDayURL,
         type: 'GET',
         dataType: 'jsonp',
         success: function (response) {
-            for (var i = 2; i < 7; i++) {
-                populateDays(response, i);
-            }
+            populateDays(response, sunrise, sunset);
         },
     });
 }
 
-var populateDays = function (responseData, tab) {
+var populateDays = function (responseData, sunrise, sunset) {
+    var curTab = 1;
+    var tab = '#fragment-'
+    var curLi = 1;
+    var first = true;
+    var curDate = getLocalDate(offset);
+    for(var i = 0; i < responseData.list.length; i++){
+        var info = responseData.list[i];
+        var hourDate = new Date((+info.dt * 1000) + (+offset * 1000));
 
+        if(compareDates(curDate, hourDate)){
+            curDate = hourDate;
+            curTab += 1;
+            curLi = 1;
+            first = true;
+        }
+        var time = convertTime(info.dt, offset);
+        var tabz = tab+curTab + ' .list-picker';
+        newLi = $
+        $(tabz)
+        .append('<li class=li-' + curLi + '> ' + time + ' </li>');
+        var targetTab = tab + curTab;
+        var liTab = targetTab + ' .li-' + curLi;
+        populateHour(targetTab, liTab, info, sunrise, sunset, first);
+        first = false;
+        curLi += 1;
+    }
+}
+
+var populateHour = function(tab, liTab, info, sunrise, sunset, first){
+
+    var main = info.weather[0].main;
+    var weatherID = info.weather[0].id;
+    var temp = info.main.temp;
+    var tempMin = info.main.temp_min;
+    var tempMax = info.main.temp_max;
+    var pressure = info.main.pressure;
+    var clouds = info.clouds.all;
+    var windSpeed = info.wind.speed;
+    var windDir = info.wind.deg;
+
+    $(liTab).on('click', function() {
+        populateDescr(tab, main, weatherID, offset, sunrise, sunset);
+        populateTemp(tab, temp, tempMin, tempMax);
+        populatePressure(tab, pressure);
+        populateWindSpeed(tab, windSpeed, windDir);
+        populateClouds(tab, clouds);
+    });
+
+    if(first){
+        populateDescr(tab, main, weatherID, offset, sunrise, sunset);
+        populateTemp(tab, temp, tempMin, tempMax);
+        populatePressure(tab, pressure);
+        populateWindSpeed(tab, windSpeed, windDir);
+        populateClouds(tab, clouds);
+    }
 }
