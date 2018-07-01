@@ -65,68 +65,176 @@ var getWeatherIcon = function (weatherID, isDay) {
     return weatherIcon;
 }
 
-var weatherReport = function(weatherID) {
+var weatherReport = function (weatherID) {
     var report = '';
-    switch(weatherID){
-        case '200' : report = 'Thunderstorm, light rain'; break;
-        case '201' : report = 'Thunderstorm, rain'; break;
-        case '202' : report = 'Thunderstorm, heavy rain'; break;
-        case '210' : report = 'Light thunderstorm'; break;
-        case '211' : report = 'Thunderstorm'; break;
-        case '212' : report = 'Heavy thunderstorm'; break;
-        case '221' : report = 'Ragged thunderstorm'; break;
-        case '230' : report = 'Thunderstorm,light drizzle'; break;
-        case '231' : report = 'Thunderstorm,drizzle'; break;
-        case '232' : report = 'Thunderstorm, heavy drizzle'; break;
-        
-        case '300' : report = 'Light intensity drizzle'; break;
-        case '301' : report = 'Drizzle'; break;
-        case '302' : report = 'Intense drizzle'; break;
-        case '310' : report = 'Light intensity drizzle rain'; break;
-        case '311' : report = 'Drizzle rain'; break;
-        case '312' : report = 'Intense drizzle rain'; break;
-        case '313' : report = 'Shower rain and drizzle'; break;
-        case '314' : report = 'Heavy shower'; break;
-        case '321' : report = 'Shower drizzle'; break;
-        
-        case '500' : report = 'Light rain'; break;
-        case '501' : report = 'Moderate rain'; break;
-        case '502' : report = 'Intense rain'; break;
-        case '503' : report = 'Very heavy rain'; break;
-        case '504' : report = 'Extreme rain'; break;
-        case '511' : report = 'Freezing rain'; break;
-        case '520' : report = 'Light intensity shower rain'; break;
-        case '521' : report = 'Shower rain'; break;
-        case '522' : report = 'Intense shower rain'; break;
-        case '531' : report = 'Ragged shower rain'; break;
-        
-        case '600' : report = 'Light snow'; break;
-        case '601' : report = 'Snow'; break;
-        case '602' : report = 'Heavy snow'; break;
-        case '611' : report = 'Sleet'; break;
-        case '612' : report = 'Shower sleet'; break;
-        case '615' : report = 'Light rain and snow'; break;
-        case '616' : report = 'Rain and snow'; break;
-        case '620' : report = 'Light shower snow'; break;
-        case '621' : report = 'Shower snow'; break;
-        case '622' : report = 'Heavy shower snow'; break;
-        
-        case '701' : report = 'Mist'; break;
-        case '711' : report = 'Smoke'; break;
-        case '721' : report = 'Haze'; break;
-        case '731' : report = 'Sand, dust whirls'; break;
-        case '741' : report = 'Fog'; break;
-        case '751' : report = 'Sand'; break;
-        case '761' : report = 'Dust'; break;
-        case '762' : report = 'Volcanic ash'; break;
-        case '771' : report = 'Squalls'; break;
-        case '781' : report = 'Tornado'; break;
+    switch (weatherID) {
+        case '200':
+            report = 'Thunderstorm, light rain';
+            break;
+        case '201':
+            report = 'Thunderstorm, rain';
+            break;
+        case '202':
+            report = 'Thunderstorm, heavy rain';
+            break;
+        case '210':
+            report = 'Light thunderstorm';
+            break;
+        case '211':
+            report = 'Thunderstorm';
+            break;
+        case '212':
+            report = 'Heavy thunderstorm';
+            break;
+        case '221':
+            report = 'Ragged thunderstorm';
+            break;
+        case '230':
+            report = 'Thunderstorm,light drizzle';
+            break;
+        case '231':
+            report = 'Thunderstorm,drizzle';
+            break;
+        case '232':
+            report = 'Thunderstorm, heavy drizzle';
+            break;
 
-        case '800' : report = 'Clear sky'; break;
-        case '801' : report = 'Few clouds'; break;
-        case '802' : report = 'Scattered clouds'; break;
-        case '803' : report = 'Broken clouds'; break;
-        case '804' : report = 'Overcast clouds'; break;
+        case '300':
+            report = 'Light intensity drizzle';
+            break;
+        case '301':
+            report = 'Drizzle';
+            break;
+        case '302':
+            report = 'Intense drizzle';
+            break;
+        case '310':
+            report = 'Light intensity drizzle rain';
+            break;
+        case '311':
+            report = 'Drizzle rain';
+            break;
+        case '312':
+            report = 'Intense drizzle rain';
+            break;
+        case '313':
+            report = 'Shower rain and drizzle';
+            break;
+        case '314':
+            report = 'Heavy shower';
+            break;
+        case '321':
+            report = 'Shower drizzle';
+            break;
+
+        case '500':
+            report = 'Light rain';
+            break;
+        case '501':
+            report = 'Moderate rain';
+            break;
+        case '502':
+            report = 'Intense rain';
+            break;
+        case '503':
+            report = 'Very heavy rain';
+            break;
+        case '504':
+            report = 'Extreme rain';
+            break;
+        case '511':
+            report = 'Freezing rain';
+            break;
+        case '520':
+            report = 'Light intensity shower rain';
+            break;
+        case '521':
+            report = 'Shower rain';
+            break;
+        case '522':
+            report = 'Intense shower rain';
+            break;
+        case '531':
+            report = 'Ragged shower rain';
+            break;
+
+        case '600':
+            report = 'Light snow';
+            break;
+        case '601':
+            report = 'Snow';
+            break;
+        case '602':
+            report = 'Heavy snow';
+            break;
+        case '611':
+            report = 'Sleet';
+            break;
+        case '612':
+            report = 'Shower sleet';
+            break;
+        case '615':
+            report = 'Light rain and snow';
+            break;
+        case '616':
+            report = 'Rain and snow';
+            break;
+        case '620':
+            report = 'Light shower snow';
+            break;
+        case '621':
+            report = 'Shower snow';
+            break;
+        case '622':
+            report = 'Heavy shower snow';
+            break;
+
+        case '701':
+            report = 'Mist';
+            break;
+        case '711':
+            report = 'Smoke';
+            break;
+        case '721':
+            report = 'Haze';
+            break;
+        case '731':
+            report = 'Sand, dust whirls';
+            break;
+        case '741':
+            report = 'Fog';
+            break;
+        case '751':
+            report = 'Sand';
+            break;
+        case '761':
+            report = 'Dust';
+            break;
+        case '762':
+            report = 'Volcanic ash';
+            break;
+        case '771':
+            report = 'Squalls';
+            break;
+        case '781':
+            report = 'Tornado';
+            break;
+
+        case '800':
+            report = 'Clear sky';
+            break;
+        case '801':
+            report = 'Few clouds';
+            break;
+        case '802':
+            report = 'Scattered clouds';
+            break;
+        case '803':
+            report = 'Broken clouds';
+            break;
+        case '804':
+            report = 'Overcast clouds';
+            break;
     }
 
     return report;
@@ -162,31 +270,31 @@ var isDay = function (hours, sunrise, sunset) {
     }
 }
 
-var getWindIcon = function(windDeg){
+var getWindIcon = function (windDeg) {
     var startClass = 'wi ';
     var endClass = ' wind-dir';
-    if((windDeg >= 0 && windDeg < 45) || windDeg == Math.floor(360)){
+    if ((windDeg >= 0 && windDeg < 45) || windDeg == Math.floor(360)) {
         return startClass + 'wi-direction-down' + endClass;
     }
-    if(windDeg >= 45 && windDeg < 90){
+    if (windDeg >= 45 && windDeg < 90) {
         return startClass + 'wi-direction-down-left' + endClass;
     }
-    if(windDeg >= 90 && windDeg < 135){
+    if (windDeg >= 90 && windDeg < 135) {
         return startClass + 'wi-direction-left' + endClass;
     }
-    if(windDeg >= 135 && windDeg < 180){
+    if (windDeg >= 135 && windDeg < 180) {
         return startClass + 'wi-direction-up-left' + endClass;
     }
-    if(windDeg >= 180 && windDeg < 225){
+    if (windDeg >= 180 && windDeg < 225) {
         return startClass + 'wi-direction-up' + endClass;
     }
-    if(windDeg >= 225 && windDeg < 270){
+    if (windDeg >= 225 && windDeg < 270) {
         return startClass + 'wi-direction-up-right' + endClass;
     }
-    if(windDeg >= 270 && windDeg < 315){
+    if (windDeg >= 270 && windDeg < 315) {
         return startClass + 'wi-direction-right' + endClass;
     }
-    if(windDeg >= 315 && windDeg <= 360){
+    if (windDeg >= 315 && windDeg <= 360) {
         return startClass + 'wi-direction-down-right' + endClass;
     }
 }
@@ -211,7 +319,7 @@ var convertTime = function (timestamp, offset) {
     return hours.substr(-2) + ':' + minutes.substr(-2);
 }
 
-var stringDate = function(date) {
+var stringDate = function (date) {
     var day = date.getDate();
     var month = +date.getMonth() + +1;
     var year = date.getFullYear();
