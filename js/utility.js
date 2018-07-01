@@ -310,6 +310,12 @@ var getLocalTime = function (offset) {
     return hours.substr(-2) + ':' + minutes.substr(-2);
 }
 
+var getLocalDate = function(offset){
+    offset = (+offset - (3 * 60 * 60))*1000;
+    var timestamp = new Date().getTime() + +offset;
+    return new Date(timestamp);;
+}
+
 var convertTime = function (timestamp, offset) {
     var time = +timestamp + +offset - (3 * 60 * 60);
     var date = new Date(time * 1000);
@@ -328,6 +334,17 @@ var stringDate = function (date) {
         month = '0' + month;
     }
     return day + '.' + month + '.' + year;
+}
+
+var shortStringDate = function(date) {
+    var day = date.getDate();
+    var month = +date.getMonth() + +1;
+
+    if (+month < 10) {
+        month = '0' + month;
+    }
+    return day + '.' + month;
+
 }
 
 Date.prototype.addDays = function (days) {

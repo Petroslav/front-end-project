@@ -13,11 +13,12 @@ const FIVE_DAY_WEATHER_PART_2 = '&lon=';
 const FIVE_DAY_WEATHER_PART_3 = '&units=metric&mode=json&APPID='
 
 var offset;
+var date;
 
 $(document).ready(function () {
     $('.search-btn').on('click', function () {
         var city = $('.search-bar').val();
-        if(city === ''){
+        if (city === '') {
             return;
         }
         $('.search-bar').val('');
@@ -40,7 +41,7 @@ var populateToday = function (data) {
 
     var timestamp = Math.floor(new Date().getTime() / 1000);
     var url = TIMEZONE_PART_1 + lat + ',' + lon + TIMEZONE_PART_2 + timestamp + TIMEZONE_PART_3 + GOOGLE_TIMEZONE_API_KEY;
-    
+
     offset = $.parseJSON($.ajax({
         url: url,
         type: 'GET',
@@ -78,17 +79,27 @@ var populateToday = function (data) {
     populateSunRise('#fragment-1', offset, sunrise, sunset);
     populateLocalTime('#fragment-1', offset);
 
+    for (var i = 2; i < 7; i++) {
+        var tab = '.tabs-list .tab-' + i;
+        var date = getLocalDate(offset)
+        date = date.addDays(i - 1);
+        date = shortStringDate(date);
+        $(tab).html(date);
+    }
+    
     var fiveDayURL = FIVE_DAY_WEATHER_PART_1 + lat + FIVE_DAY_WEATHER_PART_2 + lon + FIVE_DAY_WEATHER_PART_3 + WEATHER_API_KEY;
     $.ajax({
         url: fiveDayURL,
         type: 'GET',
         dataType: 'jsonp',
         success: function (response) {
-            populateDays(response);
+            for (var i = 2; i < 7; i++) {
+                populateDays(response, i);
+            }
         },
     });
 }
 
-var populateDays = function(responseData) {
+var populateDays = function (responseData, tab) {
 
 }

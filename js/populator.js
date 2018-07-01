@@ -3,7 +3,7 @@ var populateLocation = function (tab, cityName, country) {
     $tab.html(cityName + ', ' + country);
 
     $tab = $(tab + ' .date');
-    var date = new Date();
+    var date = getLocalDate(offset);
     var num = tab[tab.length - 1];
     if (+num > 1) {
 
@@ -28,7 +28,7 @@ var populateDescr = function (tab, main, weatherID, offset, sunrise, sunset) {
 };
 var populateTemp = function (tab, temp, minTemp, maxTemp) {
     $tab = $(tab + ' .cur-temp');
-    $tab.html(temp + '°C');
+    $tab.html(Math.round(temp) + '°C');
     $tab = $(tab + ' .header-temps')
     $tab.html(minTemp + '°C - ' + maxTemp + '°C');
 }
@@ -62,6 +62,6 @@ var populateSunRise = function (tab, offset, sunrise, sunset) {
 
 var populateLocalTime = function (tab, offset) {
     var time = getLocalTime(offset);
-    $tab = $(tab + ' .time')
-    $tab.html(time);
+    $tab = $(tab + ' .time-local')
+    $tab.html(' ' + time);
 }
