@@ -115,13 +115,7 @@ var populateDays = function (responseData, sunrise, sunset) {
     for(var i = 0; i < responseData.list.length; i++){
         var info = responseData.list[i];
         var hourDate = new Date((+info.dt * 1000) + (+offset * 1000));
-
-        if(compareDates(curDate, hourDate)){
-            curDate = hourDate;
-            curTab += 1;
-            curLi = 1;
-            first = true;
-        }
+        
         var time = convertTime(info.dt, offset);
         var tabz = tab+curTab + ' .list-picker';
         newLi = $
@@ -132,6 +126,12 @@ var populateDays = function (responseData, sunrise, sunset) {
         populateHour(targetTab, liTab, info, sunrise, sunset, first);
         first = false;
         curLi += 1;
+        if(compareDates(curDate, hourDate)){
+            curDate = hourDate;
+            curTab += 1;
+            curLi = 1;
+            first = true;
+        }
     }
 }
 
