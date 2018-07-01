@@ -44,7 +44,7 @@ var getWeatherIcon = function (weatherID, isDay) {
             break;
 
         case '8':
-            if (weatherID[1] === '0') {
+            if (weatherID[2] === '0') {
 
                 if (isDay) {
                     weatherIcon += 'wi-day-sunny';
@@ -162,4 +162,68 @@ var isDay = function (hours, sunrise, sunset) {
     }
 }
 
-console.log('swag' + weatherReport('201'));
+var getWindIcon = function(windDeg){
+    var startClass = 'wi ';
+    var endClass = ' wind-dir';
+    if((windDeg >= 0 && windDeg < 45) || windDeg == Math.floor(360)){
+        return startClass + 'wi-direction-down' + endClass;
+    }
+    if(windDeg >= 45 && windDeg < 90){
+        return startClass + 'wi-direction-down-left' + endClass;
+    }
+    if(windDeg >= 90 && windDeg < 135){
+        return startClass + 'wi-direction-left' + endClass;
+    }
+    if(windDeg >= 135 && windDeg < 180){
+        return startClass + 'wi-direction-up-left' + endClass;
+    }
+    if(windDeg >= 180 && windDeg < 225){
+        return startClass + 'wi-direction-up' + endClass;
+    }
+    if(windDeg >= 225 && windDeg < 270){
+        return startClass + 'wi-direction-up-right' + endClass;
+    }
+    if(windDeg >= 270 && windDeg < 315){
+        return startClass + 'wi-direction-right' + endClass;
+    }
+    if(windDeg >= 315 && windDeg <= 360){
+        return startClass + 'wi-direction-down-right' + endClass;
+    }
+}
+
+var getLocalTime = function (offset) {
+    var time = new Date().getTime();
+    time = +time - (3 * 60 * 60 * 1000);
+    time = +time + +offset * 1000;
+    var date = new Date(time);
+    var hours = "0" + date.getHours();
+    var minutes = "0" + date.getMinutes();
+
+    return hours.substr(-2) + ':' + minutes.substr(-2);
+}
+
+var convertTime = function (timestamp, offset) {
+    var time = +timestamp + +offset - (3 * 60 * 60);
+    var date = new Date(time * 1000);
+    var hours = "0" + date.getHours();
+    var minutes = "0" + date.getMinutes();
+
+    return hours.substr(-2) + ':' + minutes.substr(-2);
+}
+
+var stringDate = function(date) {
+    var day = date.getDate();
+    var month = +date.getMonth() + +1;
+    var year = date.getFullYear();
+
+    if (+month < 10) {
+        month = '0' + month;
+    }
+    return day + '.' + month + '.' + year;
+}
+
+Date.prototype.addDays = function (days) {
+    var date = new Date(this.valueOf());
+    date.setDate(date.getDate() + days);
+    return date;
+}

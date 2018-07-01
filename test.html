@@ -12,6 +12,8 @@
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src='./js/test.js'></script>
+  <script src='./js/utility.js'></script>
+  <script src='./js/populator.js'></script>
   <script src='./js/search.js'></script>
   <!-- <script>
   $('html').on('click', function(){
@@ -54,29 +56,25 @@
         <div class='detailed-info'>
           <div class='location'>
             <span class='city-country'>
-              London, GB
             </span>
             <span class='date'>
-              29.06.2018
             </span>
           </div>
           <hr class='line' />
           <div class='info'>
-            <span class='short-descr'> Clear </span>
+            <span class='short-descr'></span>
             <div class='info-box'>
               <div class='sky'>
-                <span class='long-descr'>Light intensity drizzle rain</span>
-                <span class='cloudiness'>Cloudiness: 0%</span>
+                <span class='long-descr'></span>
+                <span class='cloudiness'></span>
                 <span class='pressure'>
                   <i class='wi wi-barometer'></i>
-                  <span id='pressure-current'>1019 hPa</span>
+                  <span class='pressure-current'></span>
                 </span>
               </div>
               <div class='wind'>
-                <span class='wind-speed' id=>7.2 m/s</span>
-                <span class='wind-dir'>
-                  <i class="wi wi-direction-down-right wind-dir-icon"></i> 100°</span>
-                <span class='wind-dir'></span>
+                <span class='wind-speed'>7.2 m/s</span>
+                <i class="wi wi-direction-down-right wind-dir"></i>
               </div>
             </div>
           </div>
@@ -115,7 +113,7 @@
             <!-- Icon for the weather goes in the tag below -->
             <i class="wi wi-day-sunny icon-1"></i>
           </div>
-          25 °C
+          <span class = 'cur-temp'>25 °C</span>
           <hr class='line' />
           <div class='header-temps'>
             14 °C - 28 °C
