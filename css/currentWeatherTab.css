@@ -100,7 +100,14 @@ i {
     display: flex;
     flex-direction: column;
     text-align: center;
-    width: 45%;
+}
+
+.sky {
+    width: 75%;
+}
+
+.wind {
+    width: 20%;
 }
 
 .sunrise-sunset {    
