@@ -13,7 +13,6 @@ const FIVE_DAY_WEATHER_PART_2 = '&lon=';
 const FIVE_DAY_WEATHER_PART_3 = '&units=metric&mode=json&APPID='
 
 var offset;
-var date;
 
 $(function () {
     $("#tabs").tabs();
