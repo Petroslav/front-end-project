@@ -42,6 +42,7 @@ var populateToday = function (data) {
     var lon = data.coord.lon;
     var lat = data.coord.lat;
 
+    //GET OFFSET
     var timestamp = Math.floor(new Date().getTime() / 1000);
     var url = TIMEZONE_PART_1 + lat + ',' + lon + TIMEZONE_PART_2 + timestamp + TIMEZONE_PART_3 + GOOGLE_TIMEZONE_API_KEY;
 
@@ -52,7 +53,8 @@ var populateToday = function (data) {
         async: false,
     }).responseText);
     offset = +offset.rawOffset + +offset.dstOffset;
-
+    
+    //declare JSON variables
     var weatherID = data.weather[0].id;
     var main = data.weather[0].main;
 
@@ -73,6 +75,7 @@ var populateToday = function (data) {
     var sunrise = data.sys.sunrise;
     var sunset = data.sys.sunset;
 
+    //populate today's weather
     populateLocation('#fragment-1', cityName, country);
     populateDescr('#fragment-1', main, weatherID, offset, sunrise, sunset);
     populateTemp('#fragment-1', temp, tempMin, tempMax);
@@ -82,6 +85,7 @@ var populateToday = function (data) {
     populateSunRise('#fragment-1', offset, sunrise, sunset);
     populateLocalTime('#fragment-1', offset);
 
+    //populate other tabs with main information
     for (var i = 2; i < 7; i++) {
         var tab = '.tabs-list .tab-' + i;
         var date = getLocalDate(offset)
@@ -89,6 +93,7 @@ var populateToday = function (data) {
         date = shortStringDate(date);
         $(tab).html(date);
         var tabID = '#fragment-' + i;
+        $(tabID + ' .list-picker').html('');
         populateLocation(tabID, cityName, country);
         populateSunRise(tabID, offset, sunrise, sunset);
         populateLocalTime(tabID, offset);
