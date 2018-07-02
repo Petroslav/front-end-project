@@ -30,7 +30,7 @@ var populateTemp = function (tab, temp, minTemp, maxTemp) {
     $tab = $(tab + ' .cur-temp');
     $tab.html(Math.round(temp) + '°C');
     $tab = $(tab + ' .header-temps')
-    $tab.html(minTemp + '°C - ' + maxTemp + '°C');
+    $tab.html(Math.round(minTemp) + '°C - ' + Math.round(maxTemp) + '°C');
 }
 
 var populatePressure = function (tab, pressure) {

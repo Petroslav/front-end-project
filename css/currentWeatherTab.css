@@ -9,7 +9,6 @@
 .header-info {
     border-radius: 8px;
     display: flex;
-    flex-direction: right;
     height: 85%;
 }
 

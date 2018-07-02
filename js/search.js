@@ -154,7 +154,7 @@ var populateHour = function(tab, liTab, info, sunrise, sunset, first){
         populateClouds(tab, clouds);
     });
 
-    if(first){
+    if(first && tab[tab.length-1] != '1'){
         populateDescr(tab, main, weatherID, offset, sunrise, sunset);
         populateTemp(tab, temp, tempMin, tempMax);
         populatePressure(tab, pressure);
