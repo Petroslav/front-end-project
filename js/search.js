@@ -18,7 +18,15 @@ $(function () {
     $("#tabs").tabs();
 });
 
+$(document).ready(function(){
+    $('#tabs').hide();
+    $('#search-form').hide();
+    $('#search-form').fadeIn({queue: false, duration: 2000});
+    $('#search-form').animate({ width: "40%" }, 2000);
+});
+
 $(document).ready(function () {
+
     $('.search-btn').on('click', function () {
         var city = $('.search-bar').val();
         if (city === '') {
@@ -52,6 +60,7 @@ var populateToday = function (data) {
         dataType: 'json',
         async: false,
     }).responseText);
+
     offset = +offset.rawOffset + +offset.dstOffset;
     
     //declare JSON variables
@@ -84,6 +93,7 @@ var populateToday = function (data) {
     populateClouds('#fragment-1', clouds);
     populateSunRise('#fragment-1', offset, sunrise, sunset);
     populateLocalTime('#fragment-1', offset);
+    $('#fragment-1 .list-picker').html('');
 
     //populate other tabs with main information
     for (var i = 2; i < 7; i++) {
@@ -93,13 +103,15 @@ var populateToday = function (data) {
         date = shortStringDate(date);
         $(tab).html(date);
         var tabID = '#fragment-' + i;
-        $(tabID + ' .list-picker').html('');
         populateLocation(tabID, cityName, country);
         populateSunRise(tabID, offset, sunrise, sunset);
         populateLocalTime(tabID, offset);
+        $(tabID + ' .list-picker').html('');
     }
 
+    //get 5-day 3-hour forecast
     var fiveDayURL = FIVE_DAY_WEATHER_PART_1 + lat + FIVE_DAY_WEATHER_PART_2 + lon + FIVE_DAY_WEATHER_PART_3 + WEATHER_API_KEY;
+    
     $.ajax({
         url: fiveDayURL,
         type: 'GET',
@@ -108,6 +120,8 @@ var populateToday = function (data) {
             populateDays(response, sunrise, sunset);
         },
     });
+
+    $('#tabs').show();
 }
 
 var populateDays = function (responseData, sunrise, sunset) {

@@ -14,27 +14,26 @@ body {
     flex-direction: column;
     align-self: center;
     position: relative;
-    top: 25%;
-    left: 27.5%;
-    border-radius: 3px;    
-    background: #007fff;   
+    height: 520px;
+    left: 25%;
+    border-radius: 3px;
     background: rgba(29, 70, 110, 0.25);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: white;
-    -webkit-text-stroke: 1px black;
-    width: 45%;
     height: 400px;
+    -webkit-text-stroke: 1px black;
+    width: 50%;
     z-index: 15;
 }
 
-.tabs-list{
+.tabs-list {
     box-sizing: border-box;
     display: flex;
     list-style: none;
-    padding: 10px;;
     height: 45px;
     margin: 15px 15px 0;
     padding: 0;
+    text-align: center;
     width: calc(100% - 30px);
 }
 
@@ -51,7 +50,7 @@ body {
     height: 100%;
 }
 
-.list-picker a{
+.list-picker a {
     text-decoration: none;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: white;
@@ -61,103 +60,281 @@ body {
 }
 
 .tabs-list li {
-    display: flex;
     align-self: flex-end;
-    width: 16.6%;
-    overflow: hidden;
-    padding-bottom: 5px;
-    padding-left: 3px;
-    padding-right: 3px;
     background: transparent;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-
+    display: flex;
+    padding-bottom: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
+    overflow: hidden;
+    width: 16.6%;
 }
 
-#tabs .ui-tabs-active { 
+#tabs .ui-tabs-active {
     background: rgba(255, 255, 255, 0.35);
 }
 
-/* @media only screen and (max-width: 1600px) {
+@media only screen and (max-width: 1600px) {
     #tabs {
-        width: 60%;
         height: 520px;
-        left: 20%;
+        left: 12.5%;
+        width: 75%;
     }
-
-} */
-
-@media only screen and (max-width: 1366px) {
-    #tabs {
-        width: 100%;
-        height: 520px;
-        left: 0;
+    .detailed-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
-
+    .icon-1 {
+        height: 75%;
+    }
+    .icon-1 i {
+        margin-top: 25%;
+        font-size: 180px;
+    }
+    .temps {
+        height: 25%;
+    }
+    .info {
+        height: 50%;
+        padding-top: 3%;
+    }
+    .sky,
+    .wind {
+        padding-top: 10%;
+    }
+    .time-picker {
+        height: 25%;
+    }
+    .location {
+        width: 35%;
+    }
 }
 
-@media only screen and (max-width: 800px) {
-
+@media screen and (max-width: 1366px) {
     #tabs {
         width: 100%;
         height: 520px;
         left: 0;
     }
+    .location-short-descr {
+        height: 20%;
+    }
+    .icon-1 i {
+        margin-top: 15%;
+        width: 100%;
+        height: 100%;
+        font-size: 175px;
+    }
+    .info {
+        height: 50%;
+    }
+    .sky,
+    .wind {
+        padding-top: 10%;
+    }
+    .time-picker {
+        margin-top: 3.4%;
+        height: 25%;
+    }
+    .sunrise-sunset {
+        height: 96%;
+        width: 30%;
+    }
+    .sunrise-sunset>span {
+        display: flex;
+        justify-content: center;
+        padding-top: 5%;
+        width: 50%;
+    }
+}
 
+@media screen and (max-width: 850px) {
+    #tabs {
+        width: 100%;
+        height: 520px;
+        left: 0;
+    }
     .header-info {
         flex-direction: column;
-        height:90%;
+        height: 90%;
     }
-
-    .detailed-info, .main-weather-info, .location, .info, .time-picker {
+    .detailed-info,
+    .main-weather-info,
+    .location,
+    .info,
+    .time-picker {
         width: 100%;
     }
-    
     .location {
         font-size: 24px;
         margin: 0;
+        justify-content: flex-start;
     }
-
     .short-descr {
-        font-size: 36px;
+        font-size: 30px;
     }
-    
-    .time-picker{
-        margin: 5px 5px 5px 5px;
-        width: 97%;
+    .time-picker {
+        margin: 5px 0px;
     }
-
     .location span {
-        margin: 1% 20px;
+        margin-right: 10px;
     }
-
     .list-picker li {
-        font-size: 15px;
+        font-size: 17px;
     }
-
     .divider {
         display: none;
     }
-
     .main-weather-info {
         display: flex;
         flex-direction: row-reverse;
-        justify-content: center;
         align-items: center;
-        width: 95%;
-        margin: 5px 5px 5px 5px;
-        padding: 5px;
+        margin: 5px 0px;
     }
-
+    .time {
+        padding: 0 2%;
+        padding-top: 1%;
+        height: 80%;
+        text-align: center;
+    }
     .icon-1 {
-        font-size: 20px;
+        font-size: 40px;
+        width: 75%;
+        height: 100%;
+        text-align: center;
     }
-
-    .main-weather-info .line {
-        display: none;
+    .icon-1 i {
+        margin-top: 15%;
+        font-size: 130px;
     }
-
+    .temps {
+        display: flex;
+        flex-direction: column;
+        margin-left: 15px;
+        width: 25%;
+        height: 50%;
+    }
     .cur-temp {
         font-size: 25px;
+    }
+    .location-short-descr {
+        display: flex;
+        flex-direction: row;
+    }
+    .footer-info {
+        height: 8%;
+    }
+}
+
+@media screen and (max-width: 424px) {
+    .tabs-list {
+        font-size: 14px;
+    }
+    .location {
+        align-items: flex-start;
+        flex-direction: column;
+        font-size: 20px;
+    }
+    .short-descr {
+        font-size: 24px;
+    }
+    .list-picker li {
+        font-size: 13px;
+        margin: 1;
+    }
+    .time {
+        padding: auto;
+        text-align: center;
+        width: 26%;
+        height: 95%;
+    }
+    .icon-1 {
+        font-size: 16px;
+        width: 60%;
+        height: 100%;
+        text-align: center;
+    }
+    .icon-1 i {
+        margin-top: 50%;
+        font-size: 80px;
+    }
+    .temps {
+        display: flex;
+        flex-direction: column;
+        margin-left: 15px;
+        width: 40%;
+        height: 50%;
+    }
+    .cur-temp {
+        font-size: 25px;
+    }
+    .header-temps {
+        font-size: 20px;
+    }
+    .sunrise-sunset {
+        width: 70%;
+        height: 100%;
+    }
+    .rise,
+    .set {
+        font-size: 19px;
+    }
+}
+
+@media screen and (max-width: 374px) {
+    .tabs-list {
+        font-size: 12px;
+    }
+    .location {
+        align-items: flex-start;
+        flex-direction: column;
+        font-size: 20px;
+    }
+    .short-descr {
+        font-size: 24px;
+    }
+    .list-picker li {
+        font-size: 10px;
+        margin: 1;
+    }
+    .time {
+        padding: auto;
+        text-align: center;
+        width: 26%;
+        height: 100%;
+    }
+    .icon-1 {
+        font-size: 16px;
+        width: 60%;
+        height: 100%;
+        text-align: center;
+    }
+    .icon-1 i {
+        margin-top: 50%;
+        font-size: 80px;
+    }
+    .temps {
+        display: flex;
+        flex-direction: column;
+        margin-left: 15px;
+        width: 40%;
+        height: 50%;
+    }
+    .cur-temp {
+        font-size: 25px;
+    }
+    .header-temps {
+        font-size: 20px;
+    }
+    .sunrise-sunset {
+        width: 70%;
+        height: 100%;
+    }
+    .rise,
+    .set {
+        font-size: 19px;
     }
 }

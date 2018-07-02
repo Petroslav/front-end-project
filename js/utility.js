@@ -325,6 +325,23 @@ var convertTime = function (timestamp, offset) {
     return hours.substr(-2) + ':' + minutes.substr(-2);
 }
 
+var liveClock = function (startTime) {
+    startTime = startTime || new Date().getTime();
+    var today = new Date(startTime);
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('local-clock').innerHTML = h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+
+var checkTime = function(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+
 var stringDate = function (date) {
     var day = date.getDate();
     var month = +date.getMonth() + +1;
