@@ -18,13 +18,13 @@
 
 <body>
   <div class='search' id='search-form'>
-    <input class='search-bar' type='text' placeholder='Enter location...' name='location' />
+    <input class='search-bar' id='search-bar' type='text' placeholder='Enter location...' name='location' />
     <button class='search-btn' id='search-btn'>
       <img class='search-btn-img' src='images/search.png'>
     </button>
   </div>
 
-  <div id="tabs" style = 'display: none;'>
+  <div id="tabs">
       <ul class='tabs-list'>
           <li>
             <a href="#fragment-1" class='tab-1'>Today</a>
@@ -121,6 +121,14 @@
     <div id="fragment-4" class='weather-today'></div>
     <div id="fragment-5" class='weather-today'></div>
     <div id="fragment-6" class='weather-today'></div>
-</body>
+
+    <script>
+        function activateAutocomplete() {
+          var input = document.getElementById('search-bar');
+          var autocomplete = new google.maps.places.Autocomplete(input);
+        }
+    </script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARiZ40ctMPljbZYSsAJWdKdVZASyzR_0o&amp;language=en&amp;libraries=places&amp;callback=activateAutocomplete"></script>
+   </body>
 
 </html>

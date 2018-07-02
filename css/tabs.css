@@ -16,6 +16,7 @@ body {
     position: relative;
     height: 520px;
     left: 25%;
+    top: 15%;
     border-radius: 3px;
     background: rgba(29, 70, 110, 0.25);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -23,7 +24,7 @@ body {
     height: 400px;
     -webkit-text-stroke: 1px black;
     width: 50%;
-    z-index: 15;
+    z-index: 10;
 }
 
 .tabs-list {

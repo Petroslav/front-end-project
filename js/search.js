@@ -20,9 +20,9 @@ $(function () {
 
 $(document).ready(function(){
     $('#tabs').hide();
-    $('#search-form').hide();
-    $('#search-form').fadeIn({queue: false, duration: 2000});
-    $('#search-form').animate({ width: "40%" }, 2000);
+    $('.search').hide();
+    $('.search').fadeIn({queue: false, duration: 2000});
+    $('.search').animate({ width: "40%" }, 2000);
 });
 
 $(document).ready(function () {

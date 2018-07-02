@@ -21,11 +21,19 @@
 </head>
 
 <body>
-    <div class='search'>
-        <input class='search-bar' type='text' placeholder='Enter location...' name='location' />
-        <button class='search-btn'>
-            <img class='search-btn-img' src='images/search.png'>
-        </button>
+
+    <div class="frame">
+        <div class="plane-container">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1131.53px"
+                height="379.304px" viewBox="0 0 1131.53 379.304" enable-background="new 0 0 1131.53 379.304" xml:space="preserve"
+                class="plane">
+                <polygon fill="#D8D8D8" points="72.008,0 274.113,140.173 274.113,301.804 390.796,221.102 601.682,367.302 1131.53,0.223  "
+                />
+                <polygon fill="#C4C4C3" points="1131.53,0.223 274.113,140.173 274.113,301.804 390.796,221.102   " />
+            </svg>
+            </a>
+
+        </div>
     </div>
 
     <div id="tabs">
@@ -52,27 +60,27 @@
         <div id="fragment-1" class='weather-today'>
             <div class='header-info'>
                 <div class='detailed-info'>
-                    <div class='location'>
-                        <span class='city-country'>
-                        </span>
-                        <span class='date'>
-                        </span>
+                    <div class='location-short-descr'>
+                        <div class='location'>
+                            <span class='city-country'>
+                            </span>
+                            <span class='date'>
+                            </span>
+                        </div>
+                        <span class='short-descr'></span>
                     </div>
                     <div class='info'>
-                        <span class='short-descr'></span>
-                        <div class='info-box'>
-                            <div class='sky'>
-                                <span class='long-descr'></span>
-                                <span class='cloudiness'></span>
-                                <span class='pressure'>
-                                    <i class='wi wi-barometer'></i>
-                                    <span class='pressure-current'></span>
-                                </span>
-                            </div>
-                            <div class='wind'>
-                                <span class='wind-speed'>7.2 m/s</span>
-                                <i class="wi wi-direction-down-right wind-dir"></i>
-                            </div>
+                        <div class='sky'>
+                            <span class='long-descr'></span>
+                            <span class='cloudiness'></span>
+                            <span class='pressure'>
+                                <i class='wi wi-barometer'></i>
+                                <span class='pressure-current'></span>
+                            </span>
+                        </div>
+                        <div class='wind'>
+                            <span class='wind-speed'></span>
+                            <i class="wi wi-direction-down-right wind-dir"></i>
                         </div>
                     </div>
                     <div class="time-picker">
@@ -84,13 +92,12 @@
                 <div class='main-weather-info'>
                     <div class='icon-1'>
                         <!-- Icon for the weather goes as a class to the tag below -->
-                        <i class="wi wi-day-sunny icon-1"></i>
+                        <i></i>
                     </div>
-                    <div>
+                    <div class='temps'>
                         <span class='cur-temp'></span>
-                        <hr class='line' />
-                        <div class='header-temps'>
-                        </div>
+                        <hr class='line'>
+                        <div class='header-temps'></div>
                     </div>
                 </div>
             </div>
@@ -105,37 +112,36 @@
                         <span class='set'></span>
                     </span>
                 </div>
-                <button class='time'>Full day forecast</button>
                 <div class='time'>
                     <i class='wi wi-time-7'></i>
-                    <span class='time-local'></span>
+                    <span class='time-local' id='local-clock'></span>
                 </div>
             </div>
         </div>
         <div id="fragment-2" class='weather-today'>
             <div class='header-info'>
                 <div class='detailed-info'>
-                    <div class='location'>
-                        <span class='city-country'>
-                        </span>
-                        <span class='date'>
-                        </span>
+                    <div class='location-short-descr'>
+                        <div class='location'>
+                            <span class='city-country'>
+                            </span>
+                            <span class='date'>
+                            </span>
+                        </div>
+                        <span class='short-descr'></span>
                     </div>
                     <div class='info'>
-                        <span class='short-descr'></span>
-                        <div class='info-box'>
-                            <div class='sky'>
-                                <span class='long-descr'></span>
-                                <span class='cloudiness'></span>
-                                <span class='pressure'>
-                                    <i class='wi wi-barometer'></i>
-                                    <span class='pressure-current'></span>
-                                </span>
-                            </div>
-                            <div class='wind'>
-                                <span class='wind-speed'>7.2 m/s</span>
-                                <i class="wi wi-direction-down-right wind-dir"></i>
-                            </div>
+                        <div class='sky'>
+                            <span class='long-descr'></span>
+                            <span class='cloudiness'></span>
+                            <span class='pressure'>
+                                <i class='wi wi-barometer'></i>
+                                <span class='pressure-current'></span>
+                            </span>
+                        </div>
+                        <div class='wind'>
+                            <span class='wind-speed'></span>
+                            <i class="wi wi-direction-down-right wind-dir"></i>
                         </div>
                     </div>
                     <div class="time-picker">
@@ -147,13 +153,12 @@
                 <div class='main-weather-info'>
                     <div class='icon-1'>
                         <!-- Icon for the weather goes as a class to the tag below -->
-                        <i class="wi wi-day-sunny icon-1"></i>
+                        <i></i>
                     </div>
-                    <div>
+                    <div class='temps'>
                         <span class='cur-temp'></span>
-                        <hr class='line' />
-                        <div class='header-temps'>
-                        </div>
+                        <hr class='line'>
+                        <div class='header-temps'></div>
                     </div>
                 </div>
             </div>
@@ -170,34 +175,34 @@
                 </div>
                 <div class='time'>
                     <i class='wi wi-time-7'></i>
-                    <span class='time-local'></span>
+                    <span class='time-local' id='local-clock'></span>
                 </div>
             </div>
         </div>
         <div id="fragment-3" class='weather-today'>
             <div class='header-info'>
                 <div class='detailed-info'>
-                    <div class='location'>
-                        <span class='city-country'>
-                        </span>
-                        <span class='date'>
-                        </span>
+                    <div class='location-short-descr'>
+                        <div class='location'>
+                            <span class='city-country'>
+                            </span>
+                            <span class='date'>
+                            </span>
+                        </div>
+                        <span class='short-descr'></span>
                     </div>
                     <div class='info'>
-                        <span class='short-descr'></span>
-                        <div class='info-box'>
-                            <div class='sky'>
-                                <span class='long-descr'></span>
-                                <span class='cloudiness'></span>
-                                <span class='pressure'>
-                                    <i class='wi wi-barometer'></i>
-                                    <span class='pressure-current'></span>
-                                </span>
-                            </div>
-                            <div class='wind'>
-                                <span class='wind-speed'>7.2 m/s</span>
-                                <i class="wi wi-direction-down-right wind-dir"></i>
-                            </div>
+                        <div class='sky'>
+                            <span class='long-descr'></span>
+                            <span class='cloudiness'></span>
+                            <span class='pressure'>
+                                <i class='wi wi-barometer'></i>
+                                <span class='pressure-current'></span>
+                            </span>
+                        </div>
+                        <div class='wind'>
+                            <span class='wind-speed'></span>
+                            <i class="wi wi-direction-down-right wind-dir"></i>
                         </div>
                     </div>
                     <div class="time-picker">
@@ -209,13 +214,12 @@
                 <div class='main-weather-info'>
                     <div class='icon-1'>
                         <!-- Icon for the weather goes as a class to the tag below -->
-                        <i class="wi wi-day-sunny icon-1"></i>
+                        <i></i>
                     </div>
-                    <div>
+                    <div class='temps'>
                         <span class='cur-temp'></span>
-                        <hr class='line' />
-                        <div class='header-temps'>
-                        </div>
+                        <hr class='line'>
+                        <div class='header-temps'></div>
                     </div>
                 </div>
             </div>
@@ -232,34 +236,34 @@
                 </div>
                 <div class='time'>
                     <i class='wi wi-time-7'></i>
-                    <span class='time-local'></span>
+                    <span class='time-local' id='local-clock'></span>
                 </div>
             </div>
         </div>
         <div id="fragment-4" class='weather-today'>
             <div class='header-info'>
                 <div class='detailed-info'>
-                    <div class='location'>
-                        <span class='city-country'>
-                        </span>
-                        <span class='date'>
-                        </span>
+                    <div class='location-short-descr'>
+                        <div class='location'>
+                            <span class='city-country'>
+                            </span>
+                            <span class='date'>
+                            </span>
+                        </div>
+                        <span class='short-descr'></span>
                     </div>
                     <div class='info'>
-                        <span class='short-descr'></span>
-                        <div class='info-box'>
-                            <div class='sky'>
-                                <span class='long-descr'></span>
-                                <span class='cloudiness'></span>
-                                <span class='pressure'>
-                                    <i class='wi wi-barometer'></i>
-                                    <span class='pressure-current'></span>
-                                </span>
-                            </div>
-                            <div class='wind'>
-                                <span class='wind-speed'>7.2 m/s</span>
-                                <i class="wi wi-direction-down-right wind-dir"></i>
-                            </div>
+                        <div class='sky'>
+                            <span class='long-descr'></span>
+                            <span class='cloudiness'></span>
+                            <span class='pressure'>
+                                <i class='wi wi-barometer'></i>
+                                <span class='pressure-current'></span>
+                            </span>
+                        </div>
+                        <div class='wind'>
+                            <span class='wind-speed'></span>
+                            <i class="wi wi-direction-down-right wind-dir"></i>
                         </div>
                     </div>
                     <div class="time-picker">
@@ -271,13 +275,12 @@
                 <div class='main-weather-info'>
                     <div class='icon-1'>
                         <!-- Icon for the weather goes as a class to the tag below -->
-                        <i class="wi wi-day-sunny icon-1"></i>
+                        <i></i>
                     </div>
-                    <div>
+                    <div class='temps'>
                         <span class='cur-temp'></span>
-                        <hr class='line' />
-                        <div class='header-temps'>
-                        </div>
+                        <hr class='line'>
+                        <div class='header-temps'></div>
                     </div>
                 </div>
             </div>
@@ -294,34 +297,34 @@
                 </div>
                 <div class='time'>
                     <i class='wi wi-time-7'></i>
-                    <span class='time-local'></span>
+                    <span class='time-local' id='local-clock'></span>
                 </div>
             </div>
         </div>
         <div id="fragment-5" class='weather-today'>
             <div class='header-info'>
                 <div class='detailed-info'>
-                    <div class='location'>
-                        <span class='city-country'>
-                        </span>
-                        <span class='date'>
-                        </span>
+                    <div class='location-short-descr'>
+                        <div class='location'>
+                            <span class='city-country'>
+                            </span>
+                            <span class='date'>
+                            </span>
+                        </div>
+                        <span class='short-descr'></span>
                     </div>
                     <div class='info'>
-                        <span class='short-descr'></span>
-                        <div class='info-box'>
-                            <div class='sky'>
-                                <span class='long-descr'></span>
-                                <span class='cloudiness'></span>
-                                <span class='pressure'>
-                                    <i class='wi wi-barometer'></i>
-                                    <span class='pressure-current'></span>
-                                </span>
-                            </div>
-                            <div class='wind'>
-                                <span class='wind-speed'>7.2 m/s</span>
-                                <i class="wi wi-direction-down-right wind-dir"></i>
-                            </div>
+                        <div class='sky'>
+                            <span class='long-descr'></span>
+                            <span class='cloudiness'></span>
+                            <span class='pressure'>
+                                <i class='wi wi-barometer'></i>
+                                <span class='pressure-current'></span>
+                            </span>
+                        </div>
+                        <div class='wind'>
+                            <span class='wind-speed'></span>
+                            <i class="wi wi-direction-down-right wind-dir"></i>
                         </div>
                     </div>
                     <div class="time-picker">
@@ -333,13 +336,12 @@
                 <div class='main-weather-info'>
                     <div class='icon-1'>
                         <!-- Icon for the weather goes as a class to the tag below -->
-                        <i class="wi wi-day-sunny icon-1"></i>
+                        <i></i>
                     </div>
-                    <div>
+                    <div class='temps'>
                         <span class='cur-temp'></span>
-                        <hr class='line' />
-                        <div class='header-temps'>
-                        </div>
+                        <hr class='line'>
+                        <div class='header-temps'></div>
                     </div>
                 </div>
             </div>
@@ -356,35 +358,34 @@
                 </div>
                 <div class='time'>
                     <i class='wi wi-time-7'></i>
-                    <span class='time-local'></span>
+                    <span class='time-local' id='local-clock'></span>
                 </div>
             </div>
         </div>
         <div id="fragment-6" class='weather-today'>
-
             <div class='header-info'>
                 <div class='detailed-info'>
-                    <div class='location'>
-                        <span class='city-country'>
-                        </span>
-                        <span class='date'>
-                        </span>
+                    <div class='location-short-descr'>
+                        <div class='location'>
+                            <span class='city-country'>
+                            </span>
+                            <span class='date'>
+                            </span>
+                        </div>
+                        <span class='short-descr'></span>
                     </div>
                     <div class='info'>
-                        <span class='short-descr'></span>
-                        <div class='info-box'>
-                            <div class='sky'>
-                                <span class='long-descr'></span>
-                                <span class='cloudiness'></span>
-                                <span class='pressure'>
-                                    <i class='wi wi-barometer'></i>
-                                    <span class='pressure-current'></span>
-                                </span>
-                            </div>
-                            <div class='wind'>
-                                <span class='wind-speed'>7.2 m/s</span>
-                                <i class="wi wi-direction-down-right wind-dir"></i>
-                            </div>
+                        <div class='sky'>
+                            <span class='long-descr'></span>
+                            <span class='cloudiness'></span>
+                            <span class='pressure'>
+                                <i class='wi wi-barometer'></i>
+                                <span class='pressure-current'></span>
+                            </span>
+                        </div>
+                        <div class='wind'>
+                            <span class='wind-speed'></span>
+                            <i class="wi wi-direction-down-right wind-dir"></i>
                         </div>
                     </div>
                     <div class="time-picker">
@@ -396,13 +397,12 @@
                 <div class='main-weather-info'>
                     <div class='icon-1'>
                         <!-- Icon for the weather goes as a class to the tag below -->
-                        <i class="wi wi-day-sunny icon-1"></i>
+                        <i></i>
                     </div>
-                    <div>
+                    <div class='temps'>
                         <span class='cur-temp'></span>
-                        <hr class='line' />
-                        <div class='header-temps'>
-                        </div>
+                        <hr class='line'>
+                        <div class='header-temps'></div>
                     </div>
                 </div>
             </div>
@@ -419,24 +419,17 @@
                 </div>
                 <div class='time'>
                     <i class='wi wi-time-7'></i>
-                    <span class='time-local'></span>
+                    <span class='time-local' id='local-clock'></span>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="frame">
-        <div class="plane-container">
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1131.53px"
-                height="379.304px" viewBox="0 0 1131.53 379.304" enable-background="new 0 0 1131.53 379.304" xml:space="preserve"
-                class="plane">
-                <polygon fill="#D8D8D8" points="72.008,0 274.113,140.173 274.113,301.804 390.796,221.102 601.682,367.302 1131.53,0.223  "
-                />
-                <polygon fill="#C4C4C3" points="1131.53,0.223 274.113,140.173 274.113,301.804 390.796,221.102   " />
-            </svg>
-            </a>
-
-        </div>
+    <div class='search'>
+        <input class='search-bar' id='search-bar' type='text' placeholder='Enter location...' name='location' />
+        <button class='search-btn'>
+            <img class='search-btn-img' src='images/search.png'>
+        </button>
     </div>
 
     <div class="clouds">
@@ -481,7 +474,13 @@
         </svg>
     </div>
 
-
+    <script>
+        function activateAutocomplete() {
+            var input = document.getElementById('search-bar');
+            var autocomplete = new google.maps.places.Autocomplete(input);
+        }
+    </script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARiZ40ctMPljbZYSsAJWdKdVZASyzR_0o&amp;language=en&amp;libraries=places&amp;callback=activateAutocomplete"></script>
 </body>
 
 </html>

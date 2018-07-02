@@ -385,3 +385,8 @@ Date.prototype.addDays = function (days) {
     date.setDate(date.getDate() + days);
     return date;
 }
+
+var autocomplete = function(){
+    var input = $('search-bar').val();
+    var autocomplete = new google.maps.places.Autocomplete(input);
+}
