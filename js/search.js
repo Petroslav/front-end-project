@@ -5,10 +5,10 @@ const TIMEZONE_PART_1 = 'https://maps.googleapis.com/maps/api/timezone/json?loca
 const TIMEZONE_PART_2 = '&timestamp='
 const TIMEZONE_PART_3 = '&key=';
 
-const CURRENT_WEATHER_PART_1 = 'http://api.openweathermap.org/data/2.5/weather?q=';
+const CURRENT_WEATHER_PART_1 = 'https://api.openweathermap.org/data/2.5/weather?q=';
 const CURRENT_WEATHER_PART_2 = '&units=metric&APPID=';
 
-const FIVE_DAY_WEATHER_PART_1 = 'http://api.openweathermap.org/data/2.5/forecast?lat=';
+const FIVE_DAY_WEATHER_PART_1 = 'https://api.openweathermap.org/data/2.5/forecast?lat=';
 const FIVE_DAY_WEATHER_PART_2 = '&lon=';
 const FIVE_DAY_WEATHER_PART_3 = '&units=metric&mode=json&APPID='
 
